@@ -10,7 +10,7 @@ This setup allows other Terraform projects to safely store their state remotely 
 ---
 
 ## Project Structure
-
+```text
 terraform-backend/
 ├── main.tf # Resources for S3 bucket and DynamoDB table
 ├── variables.tf # Variables (e.g., AWS region)
@@ -18,7 +18,7 @@ terraform-backend/
 ├── terraform.tfstate # Local state (before backend is used)
 ├── s3.md # Detailed guide for setting up remote backend
 
-
+```
 ---
 
 ## Getting Started
