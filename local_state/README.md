@@ -2,7 +2,7 @@
 
 This repository contains small Terraform projects and examples created to practice and demonstrate Infrastructure as Code (IaC) concepts using Terraform.
 
-## 📁 Project Structure
+## Project Structure
 ```text
 Terraform/
 └── local_state/
@@ -25,15 +25,15 @@ Terraform/
 - Applies basic tagging to the instance
 - Follows best practices by excluding Terraform state files from Git
 
-## 🔒 State Management
+## State Management
 Terraform state files (`terraform.tfstate`) are kept local and excluded from version control to avoid exposing sensitive infrastructure details.
 
-## 🚀 How to Use
+## How to Use
 ```bash
 cd local_state
 terraform init
 terraform plan
 terraform apply
 ```
-## ✅ Result
+## Result
 After successfully applying the Terraform configuration, an EC2 instance will be created and visible in the AWS Management Console under the EC2 service.
