@@ -14,12 +14,12 @@ Terraform/
 - Terraform is configured to use **local state** (state files are intentionally not committed).
 - Only Terraform configuration files are version-controlled.
 
-## 🛠 Tools & Technologies
+## Tools & Technologies
 - Terraform
 - AWS (EC2)
 - Git & GitHub
 
-## ⚙️ What This Project Does
+## What This Project Does
 - Uses the AWS provider
 - Launches a Free Tier–eligible EC2 instance (`t3.micro`)
 - Applies basic tagging to the instance
