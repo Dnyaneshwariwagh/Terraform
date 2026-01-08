@@ -45,7 +45,7 @@ terraform apply
 
 2. Use the Backend in Other Terraform Projects
 
-After creating the backend, other Terraform projects can configure the remote backend by creating a backend.tf file.
+   After creating the backend, other Terraform projects can configure the remote backend by creating a backend.tf file.
 
 * Refer to s3.md
   (for the detailed step-by-step guide.)
