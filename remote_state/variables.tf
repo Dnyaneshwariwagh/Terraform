@@ -4,9 +4,14 @@ variable "aws_region" {
   default     = "ap-south-1"
 }
 
-ubuntu@ip-172-31-0-247:~/remote_state$ cat variables.tf
-variable "aws_region" {
-  description = "AWS region for backend resources"
+variable "state_bucket_name" {
+  description = "S3 bucket name for Terraform remote state"
   type        = string
-  default     = "ap-south-1"
 }
+
+variable "dynamodb_table_name" {
+  description = "DynamoDB table name for Terraform state locking"
+  type        = string
+}
+
+
