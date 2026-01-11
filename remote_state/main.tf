@@ -6,23 +6,16 @@ provider "aws" {
   region = var.aws_region
 }
 
-data "aws_caller_identity" "current" {}
-
-locals {
-  account_id  = data.aws_caller_identity.current.account_id
-  bucket_name = "${local.account_id}-terraform-states"
-}
-
 # ---------------------------------------------------
-# S3 BUCKET FOR TERRAFORM STATE
+# S3 BUCKET FOR TERRAFORM REMOTE STATE
 # ---------------------------------------------------
 resource "aws_s3_bucket" "terraform_state" {
-  bucket = local.bucket_name
+  bucket = var.state_bucket_name
 
   tags = {
-    Name        = "terraform-state-bucket"
-    ManagedBy   = "Terraform"
-    Purpose     = "Terraform Remote State"
+    Name      = "terraform-state-bucket"
+    ManagedBy = "Terraform"
+    Purpose   = "Terraform Remote State"
   }
 }
 
@@ -57,7 +50,7 @@ resource "aws_s3_bucket_public_access_block" "this" {
 # DYNAMODB TABLE FOR STATE LOCKING
 # ---------------------------------------------------
 resource "aws_dynamodb_table" "terraform_lock" {
-  name         = "terraform-lock"
+  name         = var.dynamodb_table_name
   billing_mode = "PAY_PER_REQUEST"
   hash_key     = "LockID"
 
@@ -71,4 +64,3 @@ resource "aws_dynamodb_table" "terraform_lock" {
     ManagedBy = "Terraform"
   }
 }
-
